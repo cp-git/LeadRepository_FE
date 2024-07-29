@@ -1,0 +1,169 @@
+<nav class="navbar">
+    <div class="container">
+        <div class="navbar-left">
+            Welcome, {{ userDetails.firstName }}
+        </div>
+        <div class="navbar-center">
+            <a href="#" class="logo">
+                Lead Details
+            </a>
+        </div>
+        <div class="navbar-right">
+            <button mat-raised-button color="accent" (click)="openUpdateDialog()">Add Lead</button>
+            &nbsp;
+            <button class="login-button" (click)="onLogout()">LogOut</button>
+        </div>
+    </div>
+</nav>
+
+
+<mat-card class="upload-card">
+    <mat-card-content>
+
+        <div class="file-upload">
+          
+            <input type="file" id="file" (change)="onFileSelected($event)" hidden>
+            <!-- <button mat-raised-button color="primary" (click)="triggerFileInput()">Choose File</button> -->
+
+
+            <!-- <span class="file-name" style="width:auto;border: 3px groove grey;height: 35px;border-radius: 10px;">{{ selectedFile?.name || 'No file chosen' }}</span> -->
+
+            <div class="upload-button">
+                <button mat-raised-button color="accent" (click)="uploadFile()">Upload File</button>
+            </div>
+           
+        </div>
+
+
+    </mat-card-content>
+
+</mat-card>
+
+
+<!-- Search Functionality..-->
+
+<div class="container-fluid" style="border: 2px groove grey;margin-left: 12px;width:98%;height: 120px;border-radius: 20px;">
+            <form (ngSubmit)="onSearch()" style="margin-top: 20px;" (change)="getLeadDetailsByUserId(userId)">
+
+            
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="companyName" style="margin-left: 12px;font-size: 18px;">Company Name:</label>
+                        <input id="companyName" [(ngModel)]="searchParams.companyName" name="companyName" style="margin-left: 5px;height: 30px; border-radius: 10px;" />
+                    </div>
+                    <div class="col-md-4">
+                        <label for="recruiterName"  style="font-size: 18px;">Recruiter Name:</label>
+                        <input id="recruiterName" [(ngModel)]="searchParams.recruiterName" name="recruiterName"  style="margin-left: 5px;height: 30px; border-radius: 10px;"  />
+                    </div>
+                    <div class="col-md-4">
+                        <label for="recruiterMail"  style="font-size: 18px;">Recruiter Mail:</label>
+                        <input id="recruiterMail" [(ngModel)]="searchParams.recruiterMail" name="recruiterMail"  style="margin-left: 5px;height: 30px; border-radius: 10px;" />
+                    </div>
+
+                
+                </div>
+
+
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col-md-4">
+                        <label for="positionName" style="margin-left: 12px;font-size: 18px;">Position Name:</label>
+                        <input id="positionName" [(ngModel)]="searchParams.positionName" name="positionName" style="margin-left: 15px;height: 30px; border-radius: 10px;" />
+                    </div>
+                    <div class="col-md-4">
+                        <label for="jobLocation"  style="font-size: 18px;">Job Location:</label>
+                        <input id="recruiterName" [(ngModel)]="searchParams.jobLocation" name="jobLocation"  style="margin-left: 28px;height: 30px; border-radius: 10px;"  />
+                    </div>
+                
+                    <div class="col-md-4">
+                        <button type="submit" style="font-size: 18px;border-radius: 5px;">Search</button>
+                        <button  (click)="clearData()" style="font-size: 18px;border-radius: 5px;">clear</button>
+                    
+                    </div>
+                </div>
+                
+
+            
+
+            
+                <!-- <div>
+                <label for="companyName">Company Name:</label>
+                <input id="companyName" [(ngModel)]="searchParams.companyName" name="companyName" />
+                </div>
+                <div>
+                <label for="recruiterName">Recruiter Name:</label>
+                <input id="recruiterName" [(ngModel)]="searchParams.recruiterName" name="recruiterName" />
+                </div>
+                <div>
+                <label for="recruiterMail">Recruiter Mail:</label>
+                <input id="recruiterMail" [(ngModel)]="searchParams.recruiterMail" name="recruiterMail" />
+                </div>
+                <button type="submit">Search</button> -->
+            </form>
+  
+  <!-- <div *ngIf="results">
+    <h3>Results:</h3>
+    <ul>
+        
+      <li *ngFor="let result of results">{{ result}}</li>
+    </ul>
+  </div> -->
+
+</div>
+
+
+<!---->
+
+
+<mat-card class="upload-card">
+    <mat-card-content>
+        <div class="table-container">
+            <table class="lead-details-table">
+                <thead>
+                    <tr>
+                        <!-- <th>ID</th>
+                        <th>User ID</th> -->
+                        <th>Company Name</th>
+                        <th>Recruiter Name</th>
+                        <th>Job Location</th>
+                        <th>Position Name</th>
+                        <th>Recruiter Number</th>
+                        <th>Recruiter Mail</th>
+                        <th>Link</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Comment</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let lead of leadDetails">
+                        <!-- <td>{{ lead.id }}</td>
+                        <td>{{ lead.userId }}</td> -->
+                        <td>{{ lead.companyName }}</td>
+                        <td>{{ lead.recruiterName }}</td>
+                        <td>{{ lead.jobLocation }}</td>
+                        <td>{{ lead.positionName }}</td>
+                        <td>{{ lead.recruiterNumber }}</td>
+                        <td>{{ lead.recruiterMail }}</td>
+                        <td class="truncate">
+                            <a [href]="lead.link" title="{{ lead.link }}">{{ lead.link }}</a>
+                        </td>
+                        <td>{{ lead.date | date }}</td>
+                        <td>{{ lead.status }}</td>
+                        <td>{{ lead.comment }}</td>
+                        <td class="action-buttons">
+                            <button class="logo-update" (click)="updateLead(lead)">
+                                <i class="fas fa-upload"></i>
+                            </button>
+
+                            <button class="logo-button" (click)="deleteLeadDetailsById(lead.id)">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </mat-card-content>
+</mat-card>

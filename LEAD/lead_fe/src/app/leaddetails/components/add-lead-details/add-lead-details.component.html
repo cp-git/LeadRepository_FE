@@ -1,0 +1,37 @@
+<div class="dialog-content">
+    <h2>Add Lead Details</h2>
+    <form name="leadForm" #benchForm="ngForm" (ngSubmit)="createLead(leadDetails)" novalidate>
+        <div class="form-group">
+
+            <input type="text" id="userid" name="userid" placeholder="UserId" [(ngModel)]="userDetails.firstName"
+                disabled>
+            <input type="text" id="companyName" name="companyName" placeholder="Company Name"
+                [(ngModel)]="leadDetails.companyName">
+            <input type="text" id="recruiterName" name="recruiterName" placeholder="Recruiter Name"
+                [(ngModel)]="leadDetails.recruiterName">
+            <input type="text" id="recruiterNumber" name="recruiterNumber" placeholder="Recruiter Number"
+                [(ngModel)]="leadDetails.recruiterNumber">
+            <input type="email" id="recruiterMail" name="recruiterMail" placeholder="Recruiter Mail"
+                [(ngModel)]="leadDetails.recruiterMail">
+            <input type="text" id="jobLocation" name="jobLocation" placeholder="Job Location"
+                [(ngModel)]="leadDetails.jobLocation">
+            <input type="text" id="positionName" name="positionName" placeholder="Position Name"
+                [(ngModel)]="leadDetails.positionName">
+            <!-- <input type="text" id="comment" name="comment" placeholder="Comment" [(ngModel)]="leadDetails.comment"> -->
+            <input type="date" id="date" name="date" placeholder="Date" [(ngModel)]="leadDetails.date">
+            <input type="text" id="status" name="status" placeholder="Status" [(ngModel)]="leadDetails.status">
+            <!-- <input type="text" id="link" name="link" placeholder="Link" [(ngModel)]="leadDetails.link"> -->
+            <div class="full-width">
+                <input type="text" id="comment" name="comment" placeholder="Comment" [(ngModel)]="leadDetails.comment">
+            </div>
+            <div class="full-width">
+                <input type="text" id="link" name="link" placeholder="Link" [(ngModel)]="leadDetails.link">
+            </div>
+        </div>
+        <div class="form-actions">
+            <input type="submit" value="Submit">
+            <input type="close" value="Close" (click)="onNoClick()">
+        </div>
+    </form>
+
+</div>

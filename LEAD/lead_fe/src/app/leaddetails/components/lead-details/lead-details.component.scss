@@ -1,0 +1,261 @@
+mat-card {
+
+    text-align: left;
+    border: 2px solid #6e6e6e;
+    margin-top: 3px;
+    max-width: 100%;
+    margin: 10px;
+    padding: 20px;
+}
+
+mat-card-content {
+    padding: 10px;
+}
+
+.upload-card {
+    max-width: 100%;
+    margin: 10px;
+    text-align: center;
+    padding: 20px;
+}
+
+.file-upload {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.file-name {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.upload-button {
+    margin-left: 20px;
+}
+
+.navbar {
+    position: sticky;
+    background-color: #274cba;
+    color: #fff;
+    padding: 10px 5px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar-left {
+    flex: 1;
+    text-align: left;
+    font-size: 20px;
+}
+
+.navbar-center {
+    flex: 1;
+    text-align: center;
+}
+
+.navbar-right {
+    flex: 1;
+    text-align: right;
+}
+
+.logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+button {
+    margin-left: 10px;
+}
+
+.login-button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    text-decoration: underline;
+}
+
+
+
+.toggle-button {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    display: none;
+}
+
+.login-button {
+    /* margin-left: 100%; */
+    background-color: #ce0202;
+    color: white;
+    padding: 10px 15px;
+
+    border: #313131;
+    border-radius: 45px;
+    cursor: pointer;
+}
+
+h2 {
+    margin: 10px;
+}
+
+.mat-raised-button {
+    border-radius: 45px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.table-container {
+    max-height: 400px;
+    /* Adjust as needed */
+    overflow-y: auto;
+    position: relative;
+}
+
+.lead-details-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    font-size: 14px;
+    text-align: left;
+
+    thead {
+
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    th,
+    td {
+        padding: 6px 8px;
+        // border: 0.1px  #ebebeb;
+    }
+
+    th {
+        border: 1px solid #b8b8b8;
+        text-align: center;
+        font-weight: 300;
+        font-size: larger;
+        color: white;
+        background-color: #274cba;
+    }
+
+    tr:nth-child(even) {
+        background-color: #ffc99d;
+    }
+
+    tr:hover {
+        background-color: #ffe3e3;
+    }
+
+    a {
+        color: #1e88e5;
+        text-decoration: none;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
+        max-width: 150px;
+        /* Adjust as needed */
+    }
+
+    a:hover {
+        text-decoration: underline;
+        overflow: visible;
+        white-space: normal;
+    }
+
+    .truncate {
+        max-width: 150px;
+        /* Adjust as needed */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .action-buttons {
+        display: flex;
+
+
+    }
+}
+
+
+.logo-button {
+    display: flex;
+    /* margin-left: 100%; */
+    background-color: #ff4f4f;
+    color: white;
+    padding: 10px 15px;
+
+    border: #313131;
+    border-radius: 45px;
+    cursor: pointer;
+}
+
+.logo-update {
+    /* margin-left: 100%; */
+    background-color: #6085ff;
+    color: white;
+    padding: 10px 15px;
+
+    border: #313131;
+    border-radius: 45px;
+    cursor: pointer;
+}
